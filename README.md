@@ -31,12 +31,14 @@ To begin, you will need to have the following pre-requisites sorted:
 
 ### Steps to create the e-commerce product description generator
 
-1. Create a new project on your Google Cloud console called `gemini-try`.
+1. Create a new project on your Google Cloud console called `gemini-ecomm` or anything relevant.
+
 2. Go to Vertex AI from your Google Cloud Console, the easiest way to do it would be to search for `vertex` on the search bar as seen below:
 
 ![Search vertex on GCP console](./images/01seach-vertex-on-gcp.jpg)
 
  3. Click on `Vertex AI`
+
  4. On the Vertex AI page, click on `Multimodal` found on the left menu
 
 ![Click on Multimodal on Vertex AI page](./images/02multimodal.jpg)
@@ -45,10 +47,14 @@ To begin, you will need to have the following pre-requisites sorted:
 
 ![Click on Open for Prompt design (Single Turn)](./images/03single-turn.jpg)
 
-6. On the Prompt experiment page, paste the following prompt in the `Prompt` text box:
+6. On the Prompt experiment page, please make sure you have the `gemini-1.0-pro-vision-001` model selected. Then, paste the following prompt in the `Prompt` text box:
 
-```
-As an expert e-commerce copywriter, analyze the uploaded images of women's jeans and write a product description for a low to mid-end fashion e-commerce website. Please include the details about the comfortable to wear jeans and do not include any details about the price. Make sure that the copy is written in an engaging and friendly tone.
+```text
+As an expert e-commerce copywriter, analyze the uploaded images of
+women's jeans and write a product description for a low to mid-end 
+fashion e-commerce website. Please include the details about the 
+comfortable to wear jeans and do not include any details about the 
+price. Make sure that the copy is written in an engaging and friendly tone.
 ```
 
 7. Then upload the images you find in this repository's `womens-jeans-photos` folder by clicking the `Insert Media` option on the right side of the `Prompt` textbox. Once all the 8 images are uploaded, it will look something like the below:
@@ -61,28 +67,90 @@ As an expert e-commerce copywriter, analyze the uploaded images of women's jeans
 
 9. At this point, it would be a good idea to save your prompt (with images). To do this, click the `pen` icon besides `Untitled prompt` above the prompt text box and type `e-commerece-product-desc-generator` the click anywhere, it will look like the below while editing:
 
-![Save the prompt](./images/06save-prompt.jpg)
+![Name the prompt](./images/06name-prompt.jpg)
 
-10. Save prompt - choose reason (US central 1)
+10. As you have named the prompt, you can save it. To save the prompt click `Save` on the top left part of the right side bar as shown below:
 
-11. Hurray! The basic e-commerce product description generator is working. Now, you will do some more tweaks to the setting to make it better.
+![Save button for the prompt](./images/07save-button.jpg)
 
-IMAGE - Temprature, output limit, top k, top p
+11. Then select the region (it is ok to choose us-central1) on the overlay window and save the prompt.
 
-12. It is also important to set up the `Safety Settings` correctly as per your usecase, for now we will set it at maximum safety (Responsibel AI). 
+![Save the prompt selecting a region](./images/08save-prompt-region.jpg)
 
-IMAGE - block all
+All saved prompts will be accessible in your [My Prompts](https://console.cloud.google.com/vertex-ai/generative/multimodal/my-prompts?hl=en-AU) page.
 
-13. You can also tweak the prompt text to make it better.
+![Save the prompt selecting a region](./images/09my-prompts.jpg)
 
-IMAGE
+12. Hurray! The basic e-commerce product description generator is working. Now, you will change some settings to make it better. You can go back to the prompt editing page clicking the `Prompt Name` if you are on the `My Prompts` page.
 
-14. Generate Node.js code
+13. In terms of configurations, for Gemini 1.0 pro vision there are 4 options you can configure. Those four are explained in plain words below:
 
-IMAGE - get code
+* Temperature (Randomness/Creativity/Spice): Imagine a roulette wheel (randomness). A high temperature increases the spin's randomness, affecting the chosen word (output).
 
-15. Save the code in a index.js file
+* Output Token Limit (Length): This is like a set word limit (length) for your text. It controls how many words the LLM generates in total.
 
-16. Run the code to test it out (npm install, etc)
+* Top K (Choice): Think of this as picking from a shortlist (choice) of the most likely words. A lower K restricts the options for the next word.
 
-17. Misc, go back to saved prompts
+* Top P (Probability): This is like a probability wheel (probability). It influences the LLM to pick the next word based on its likelihood (probability), not just being the most likely.
+
+Below is a configuration you can try out, the right settings for this configuration depends on how you want the output to be shaped by Gemini:
+
+![4 configs for the Gemini pro vision LLM](./images/10gemini-configs.jpg)
+
+14. It is also important to set up the `Safety Settings` correctly as per your usecase, for now we will set it at maximum safety (Responsible AI). As seen below, the safety settings (found on the right sidebar are self explanatory)
+
+![4 configs for the Gemini pro vision LLM](./images/11safety-settings.jpg)
+
+15. You can also tweak the prompt text to make it better, below is another version of the prompt:
+
+```
+As an expert e-commerce copywriter, analyze the uploaded images of women's
+jeans and write a product description for a low to mid-end fashion e-commerce
+website. Please include the details about the comfortable to wear clothing and
+do not include any details about the price. Make sure that the copy is written
+in an engaging and direct tone. 
+```
+
+You can play around with the prompt and make it more flexible or more specific as per your goals.
+
+---
+
+Optional code step below, needs Node.js installed
+
+---
+
+16. Generate code (Node.js)
+
+If you want to create an API for the e-commerece description generator or want ot have more control over how the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
+
+![Get code for your Gemini experiment](./images/12get-code.jpg)
+
+For this workshop, you will use the Node.js code and try it out.
+
+17. Save the code in a index.js file
+
+To save the code click `Node.js` and copy the code into a file called `index.js`
+
+![Get Node.js code for e-commerce descripiton generator](./images/13copy-nodejs-code.jpg)
+
+Then run `npm init -y` on that folder to initialize a Node.js project. After that run `npm install @google-cloud/vertexai`.  Consequently run `gcloud auth application-default login` , then login to your Google Cloud account.
+
+18. Run the code to test it out
+
+To test the code, run `node index.js`, which will result in an output like the below:
+
+![Get Node.js code for e-commerce descripiton generator](./images/14nodejs-output.jpg)
+
+19. Further steps
+
+The generated code is more like a proof of concept. You can add an API layer and UI on top of it to make it more useful. For instance below is a basic UI generated with [v0](https://v0.dev/r/iP3BVQiLBa5) with the prompt:
+
+```
+An internal tool for ecommerce website to generate product desciption,
+it will have a product name text box, multi file upload field, category
+select box with clothes, shoes, accessory options , gender select box
+with male, female and unisex options and age select box with infants,
+kids, teens and adults options. Then a button that says Generate.
+```
+![Get Node.js code for e-commerce descripiton generator](./images/15simple-ui.jpg)
+
