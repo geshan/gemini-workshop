@@ -1,0 +1,23 @@
+{
+  "name": "gemini-workshop",
+  "version": "1.0.0",
+  "description": "A workshop using Google's Gemini LLM to build an e-commerce product description generator (for Build With AI event series).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geshan/gemini-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geshan/gemini-workshop/issues"
+  },
+  "homepage": "https://github.com/geshan/gemini-workshop#readme",
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.1.0"
+  }
+}
