@@ -37,6 +37,10 @@ To begin, you will need to have the following pre-requisites sorted:
 
 ### Steps to create the e-commerce product description generator
 
+Below are the steps to create a e-commerce product description generator:
+
+#### Vertex AI on GCP
+
 1. Create a new project on your Google Cloud console called `gemini-ecomm` or anything relevant.
 
 2. Go to Vertex AI from your Google Cloud Console, the easiest way to do it would be to search for `vertex` on the search bar as seen below:
@@ -50,7 +54,7 @@ To begin, you will need to have the following pre-requisites sorted:
 
  3. Click on `Vertex AI`
 
- 4. On the Vertex AI page, click on `Multimodal` found on the left menu
+ 4. On the Vertex AI page, (enable all related APIs)click on `Multimodal` found on the left menu
 
 <details>
 <summary>Multimodal</summary>
@@ -68,6 +72,8 @@ To begin, you will need to have the following pre-requisites sorted:
 
 </details>
 
+#### Prompting
+
 6. On the Prompt experiment page, please make sure you have the `gemini-1.0-pro-vision-001` model selected. Then, paste the following prompt in the `Prompt` text box:
 
 <details>
@@ -82,6 +88,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 ```
 
 </details>
+
 
 7. Then upload the images you find in this repository's `womens-jeans-photos` folder by clicking the `Insert Media` option on the right side of the `Prompt` textbox. Once all the 8 images are uploaded, it will look something like the below:
 
@@ -100,6 +107,8 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 ![The response to the prompt with product description](./images/05prompt-response.jpg)
 
 </details>
+
+#### Name and save the prompt
 
 9. At this point, it would be a good idea to save your prompt (with images). To do this, click the `pen` icon beside `Untitled prompt` above the prompt text box, then type `e-commerce-product-desc-generator` the click anywhere, it will look like the below while editing:
 
@@ -137,6 +146,8 @@ All saved prompts will be accessible in your [My Prompts](https://console.cloud.
 </details>
 
 12. Hurray! The basic e-commerce product description generator is working. Now, you will change some settings to make it better. You can go back to the prompt editing page by clicking the `Prompt Name` if you are on the `My Prompts` page.
+
+#### Gemini configurations
 
 13. In terms of configurations, for Gemini 1.0 pro vision there are 4 options you can configure. Those four are explained in plain words below:
 
@@ -194,9 +205,9 @@ The optional code step below, needs Node.js installed
 
 ---
 
-16. Generate code (Node.js)
+#### Generated Node.js Code
 
-If you want to create an API for the e-commerce description generator or want to have more control over what the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
+16. If you want to create an API for the e-commerce description generator or want to have more control over what the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
 
 <details>
 <summary>Default generated code (Python)</summary>
@@ -206,9 +217,7 @@ If you want to create an API for the e-commerce description generator or want to
 
 For this workshop, you will use the Node.js code and try it out.
 
-17. Save the code in an index.js file
-
-To save the code click `Node.js` and copy the code into a file called `index.js`
+17. To save the code click `Node.js` and copy the code into a file called `index.js`
 
 <details>
 <summary>Copy Node.js code</summary>
@@ -230,9 +239,13 @@ To test the code, run `node index.js`, which will result in an output like the b
 
 </details>
 
+#### What's next
+
 19. Further steps
 
-The generated code is more like a proof of concept. You can add an API layer and UI on top of it to make it more useful. For instance below is a basic UI generated with [v0](https://v0.dev/r/iP3BVQiLBa5) with the prompt:
+The generated code is more like a proof of concept. You can add an API layer and UI on top of it to make it more useful. You can deploy that API on Google Cloud Run as serverelss containers.
+
+For instance below is a basic UI generated with [v0](https://v0.dev/r/iP3BVQiLBa5) with the prompt:
 
 <details>
 <summary>Prompt to generate UI on V0</summary>
@@ -255,5 +268,7 @@ The UI is below:
 ![Get Node.js code for e-commerce description generator](./images/15simple-ui.jpg)
 
 </details>
+
+20. It would be good idea to read more about LLMs in general and also about Gemini. You can also do course or code labs about [Gemini on Cloud Skills boost](https://www.cloudskillsboost.google/catalog?keywords=gemini&page=1) platform.
 
 Thank you!
