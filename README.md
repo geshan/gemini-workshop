@@ -23,7 +23,7 @@ With the photos of the product (with or without a model) and the product's descr
 
 </details>
 
-This workshop is about automating the process, where the copywriter (or someone else), will upload the photos and ask Gemini to generate a product description. The photos used in this workshop are right free images by [Dmitriy Steinke](https://www.pexels.com/photo/model-in-a-white-t-shirt-and-jeans-17542870/) found on Pexels.
+This workshop is about automating the process, where the copywriter (or someone else), will upload the photos and ask Gemini to generate a product description. The photos used in this workshop are right free images by [Dmitriy Steinke](https://www.pexels.com/@dmitriy-steinke-559643503/) from Pexels.
 
 ---
 
@@ -32,8 +32,7 @@ This workshop is about automating the process, where the copywriter (or someone 
 To begin, you will need to have the following pre-requisites sorted:
 
 1. Have a working Google Cloud account (with some credit)
-1. Turn on Vertex AI APIs
-1. Cloned this repository on your machine, for the product images.
+1. Cloned/downloaded [the](https://github.com/geshan/gemini-workshop) repository on your machine, for the product images.
 
 ### Steps to create the e-commerce product description generator
 
@@ -41,9 +40,18 @@ Below are the steps to create a e-commerce product description generator:
 
 #### Vertex AI on GCP
 
-1. Create a new project on your Google Cloud console called `gemini-ecomm` or anything relevant.
+1. Go to you Google Cloud Console and [Create a new project](https://console.cloud.google.com/projectcreate) called `gemini-ecomm` or anything relevant as seen below:
 
-2. Go to Vertex AI from your Google Cloud Console, the easiest way to do it would be to search for `vertex` on the search bar as seen below:
+<details>
+<summary>New project</summary>
+
+![Create a new GCP project](./images/16new-project.jpg)
+
+</details>
+
+2. Make sure you have selected the project created in step 1 if you have multiple projects.
+
+3. Go to Vertex AI from your Google Cloud Console, the easiest way to do it would be to search for `vertex` on the search bar as seen below:
 
 <details>
 <summary>Search bar</summary>
@@ -52,9 +60,18 @@ Below are the steps to create a e-commerce product description generator:
 
 </details>
 
- 3. Click on `Vertex AI`
+ 4. Click on `Vertex AI`
 
- 4. On the Vertex AI page, (enable all related APIs)click on `Multimodal` found on the left menu
+ 5. On the Vertex AI page, then "Enable all recommended APIs" as seen below (it will take some time):
+ 
+<details>
+<summary>Enable APIs</summary>
+
+![Enable all related Vertex AI APIs](./images/17enable-apis.jpg)
+
+</details>
+ 
+6. After then APIs are enabled, click on `Multimodal` found on the left menu
 
 <details>
 <summary>Multimodal</summary>
@@ -63,7 +80,7 @@ Below are the steps to create a e-commerce product description generator:
 
 </details>
 
- 5. On the Multimodal page, click `Open` on the "Prompt design (single turn)" box as follows:
+7. On the Multimodal page, click `Open` on the "Prompt design (single turn)" box as follows:
 
 <details>
 <summary>Prompt Design</summary>
@@ -74,7 +91,7 @@ Below are the steps to create a e-commerce product description generator:
 
 #### Prompting
 
-6. On the Prompt experiment page, please make sure you have the `gemini-1.0-pro-vision-001` model selected. Then, paste the following prompt in the `Prompt` text box:
+8. On the Prompt experiment page, please make sure you have the `gemini-1.0-pro-vision-001` model selected. Then, paste the following prompt in the `Prompt` text box:
 
 <details>
 <summary>The Prompt</summary>
@@ -89,8 +106,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 
 </details>
 
-
-7. Then upload the images you find in this repository's `womens-jeans-photos` folder by clicking the `Insert Media` option on the right side of the `Prompt` textbox. Once all the 8 images are uploaded, it will look something like the below:
+9. Then upload the images you find in this repository's `womens-jeans-photos` folder by clicking the `Insert Media` option on the right side of the `Prompt` textbox. Once all the 8 images are uploaded, it will look something like the below:
 
 <details>
 <summary>Prompt Ready</summary>
@@ -99,7 +115,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 
 </details>
 
-8. After that hit the `Submit` button to test out the prompt with the uploaded images, you should get a response similar to the following:
+10. After that hit the `Submit` button to test out the prompt with the uploaded images, you should get a response similar to the following:
 
 <details>
 <summary>Prompt Working</summary>
@@ -110,7 +126,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 
 #### Name and save the prompt
 
-9. At this point, it would be a good idea to save your prompt (with images). To do this, click the `pen` icon beside `Untitled prompt` above the prompt text box, then type `e-commerce-product-desc-generator` the click anywhere, it will look like the below while editing:
+11. At this point, it would be a good idea to save your prompt (with images). To do this, click the `pen` icon beside `Untitled prompt` above the prompt text box, then type `e-commerce-product-desc-generator` the click anywhere, it will look like the below while editing:
 
 <details>
 <summary>Name the prompt</summary>
@@ -118,7 +134,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 ![Name the prompt](./images/06name-prompt.jpg)
 </details>
 
-10. As you have named the prompt, you can save it. To save the prompt click `Save` on the top left part of the right sidebar as shown below:
+12. As you have named the prompt, you can save it. To save the prompt click `Save` on the top left part of the right sidebar as shown below:
 
 <details>
 <summary>Save Prompt button</summary>
@@ -127,7 +143,7 @@ price. Make sure that the copy is written in an engaging and friendly tone.
 
 </details>
 
-11. Then select the region (it is ok to choose us-central1) on the overlay window and save the prompt.
+13. Then select the region (it is ok to choose us-central1) on the overlay window and save the prompt.
 
 <details>
 <summary>Save Prompt options</summary>
@@ -145,11 +161,11 @@ All saved prompts will be accessible in your [My Prompts](https://console.cloud.
 
 </details>
 
-12. Hurray! The basic e-commerce product description generator is working. Now, you will change some settings to make it better. You can go back to the prompt editing page by clicking the `Prompt Name` if you are on the `My Prompts` page.
+14. Hurray! The basic e-commerce product description generator is working. Now, you will change some settings to make it better. You can go back to the prompt editing page by clicking the `Prompt Name` if you are on the `My Prompts` page.
 
 #### Gemini configurations
 
-13. In terms of configurations, for Gemini 1.0 pro vision there are 4 options you can configure. Those four are explained in plain words below:
+15. In terms of configurations, for Gemini 1.0 pro vision there are 4 options you can configure. Those four are explained in plain words below:
 
 <details>
 <summary>LLM Config params</summary>
@@ -173,7 +189,7 @@ Below is a configuration you can try out, the right settings for this configurat
 
 </details>
 
-14. It is also important to set up the `Safety Settings` correctly as per your use case, for now, we will set it at maximum safety (Responsible AI). As seen below, the safety settings (found on the right sidebar are self-explanatory)
+16. It is also important to set up the `Safety Settings` correctly as per your use case, for now, we will set it at maximum safety (Responsible AI). As seen below, the safety settings (found on the right sidebar are self-explanatory)
 
 <details>
 <summary>Gemini Safety Settings</summary>
@@ -182,7 +198,7 @@ Below is a configuration you can try out, the right settings for this configurat
 
 </details>
 
-15. You can also tweak the prompt text to make it better, below is another version of the prompt:
+17. You can also tweak the prompt text to make it better, below is another version of the prompt:
 
 <details>
 <summary>Another Prompt</summary>
@@ -207,7 +223,7 @@ The optional code step below, needs Node.js installed
 
 #### Generated Node.js Code
 
-16. If you want to create an API for the e-commerce description generator or want to have more control over what the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
+18. If you want to create an API for the e-commerce description generator or want to have more control over what the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
 
 <details>
 <summary>Default generated code (Python)</summary>
@@ -217,7 +233,7 @@ The optional code step below, needs Node.js installed
 
 For this workshop, you will use the Node.js code and try it out.
 
-17. To save the code click `Node.js` and copy the code into a file called `index.js`
+19. To save the code click `Node.js` and copy the code into a file called `index.js`
 
 <details>
 <summary>Copy Node.js code</summary>
@@ -228,7 +244,7 @@ For this workshop, you will use the Node.js code and try it out.
 
 Then run `npm init -y` on that folder to initialize a Node.js project. After that run `npm install @google-cloud/vertexai`.  Consequently run `gcloud auth application-default login`, then login to your Google Cloud account.
 
-18. Run the code to test it out
+20. Run the code to test it out
 
 To test the code, run `node index.js`, which will result in an output like the below:
 
@@ -241,7 +257,7 @@ To test the code, run `node index.js`, which will result in an output like the b
 
 #### What's next
 
-19. Further steps
+21. Further steps
 
 The generated code is more like a proof of concept. You can add an API layer and UI on top of it to make it more useful. You can deploy that API on Google Cloud Run as serverelss containers.
 
@@ -269,6 +285,6 @@ The UI is below:
 
 </details>
 
-20. It would be good idea to read more about LLMs in general and also about Gemini. You can also do course or code labs about [Gemini on Cloud Skills boost](https://www.cloudskillsboost.google/catalog?keywords=gemini&page=1) platform.
+22. It would be good idea to read more about LLMs in general and also about Gemini. You can also do course or code labs about [Gemini on Cloud Skills boost](https://www.cloudskillsboost.google/catalog?keywords=gemini&page=1) platform.
 
 Thank you!
