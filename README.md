@@ -60,17 +60,17 @@ Below are the steps to create a e-commerce product description generator:
 
 </details>
 
- 4. Click on `Vertex AI`
+4. Click on `Vertex AI`
 
- 5. On the Vertex AI page, then "Enable all recommended APIs" as seen below (it will take some time):
- 
+5. On the Vertex AI page, then "Enable all recommended APIs" as seen below (it will take some time):
+
 <details>
 <summary>Enable APIs</summary>
 
 ![Enable all related Vertex AI APIs](./images/17enable-apis.jpg)
 
 </details>
- 
+
 6. After then APIs are enabled, click on `Multimodal` found on the left menu
 
 <details>
