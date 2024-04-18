@@ -219,11 +219,11 @@ You can play around with the prompt and make it more flexible or more specific a
 
 ---
 
-The optional code step below, needs Node.js installed
+The optional code step below.
 
 ---
 
-#### Generated Node.js Code
+#### Generate Node.js Code
 
 18. If you want to create an API for the e-commerce description generator or want to have more control over what the LLM is called, you can generate code and run it on a Google Cloud Platform service like Google Cloud Run. To generate code, click the `<> Get Code` link which shows a slider on the right side as follows:
 
@@ -233,33 +233,61 @@ The optional code step below, needs Node.js installed
 ![Get code for your Gemini experiment](./images/12get-code.jpg)
 </details>
 
-For this workshop, you will use the Node.js code and try it out.
+For this workshop, you will use the Node.js code and try it out. For that you will use Cloud shell and Cloud shell editor.
 
-19. To save the code click `Node.js` and copy the code into a file called `index.js`
+19. Click `Activate Cloud Shell` toward the top right corner of the screen as seen below:
 
-<details>
-<summary>Copy Node.js code</summary>
+![Activate Cloud Shell](./images/19activate-cloud-shell.jpg)
+
+20. In the Cloud shell window, click `Open Editor`:
+
+![Open editor](./images/20open-editor.jpg)
+
+21. This will take some time and open up the Google Cloud Shell Editor which looks very similar to VS Code. In the Editor click `Hamburger Menu > Terminal > New Terminal` as follow:
+
+![Open terminal in editor](./images/21open-terminal.jpg)
+
+22. In the editor's teminal, execute `mkdir projects && cd projects && mkdir gemini-workshop && cd gemini-workshop`, after that run `npm init -y` as follow:
+
+![Commands executed](./images/22run-commands.jpg)
+
+23. Then, run `npm install @google-cloud/vertexai` to install vertext AI NPM package:
+
+![Install Vertex AI NPM package](./images/23npm-vertex-ai.jpg)
+
+24. After that you will load the folder in the project, go to `Hamburger Menu > File > Open Folder`:
+
+![Load project to Cloud shell editor](./images/24load-project.jpg)
+
+25. Then type in `projects/gem` and select the `gemini-workshop` option and click `OK`:
+
+![Load project to Cloud shell editor](./images/25select-folder.jpg)
+
+26. It will load the folder on the Cloud Shell editor, after that, to add a new file click the `file+` icon besides `GEMINI-WORKSHOP` and name it `index.js`
+
+![Create new index.js](./images/26new-file.jpg)
+
+27. For the contents of the index.js, click `<>GET CODE` on the Vertex AI Editor screen, then code click `Node.js` and copy the code into a file called `index.js`
 
 ![Get Node.js code for e-commerce descripiton generator](./images/13copy-node-js-code.jpg)
 
-</details>
+28. Paste the code in the `index.js` empty file and save it:
 
-Then run `npm init -y` on that folder to initialize a Node.js project. After that run `npm install @google-cloud/vertexai`.  Consequently run `gcloud auth application-default login`, then login to your Google Cloud account.
+![Paste copied code](./images/27paste-code.jpg)
 
-20. Run the code to test it out
+29. To run the code and test it out, again open the terminal from `Hamburger Menu > Terminal > New Terminal` and type in `node index` then hit enter. It will ask you to `Authorise`:
 
-To test the code, run `node index.js`, which will result in an output like the below:
+![Paste copied code](./images/28authorise.jpg)
 
-<details>
-<summary>Node.js code output</summary>
+After authorisation the code will run and give an outupt like the below:
 
-![Get Node.js code for e-commerce description generator](./images/14nodejs-output.jpg)
+![Code output](./images/29code-output.jpg)
 
-</details>
+Congrats! You are a Gemini and Vertex AI novice now :). You can close the Cloud Shell Editor.
 
 #### What's next
 
-21. Further steps
+30. Further steps
 
 The generated code is more like a proof of concept. You can add an API layer and UI on top of it to make it more useful. You can deploy that API on Google Cloud Run as serverelss containers.
 
@@ -287,6 +315,6 @@ The UI is below:
 
 </details>
 
-22. It would be good idea to read more about LLMs in general and also about Gemini. You can also do course or code labs about [Gemini on Cloud Skills boost](https://www.cloudskillsboost.google/catalog?keywords=gemini&page=1) platform.
+31. It would be good idea to read more about LLMs in general and also about Gemini. You can also do course or code labs about [Gemini on Cloud Skills boost](https://www.cloudskillsboost.google/catalog?keywords=gemini&page=1) platform.
 
 Thank you!
