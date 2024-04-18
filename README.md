@@ -67,7 +67,7 @@ Below are the steps to create a e-commerce product description generator:
 <details>
 <summary>Enable APIs</summary>
 
-![Enable all related Vertex AI APIs](./images/17enable-apis.jpg)
+![Enable all related Vertex AI APIs](./images/18enable-apis.jpg)
 
 </details>
 
