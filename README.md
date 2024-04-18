@@ -237,51 +237,111 @@ For this workshop, you will use the Node.js code and try it out. For that you wi
 
 19. Click `Activate Cloud Shell` toward the top right corner of the screen as seen below:
 
+<details>
+<summary>Activate cloud shell</summary>
+
 ![Activate Cloud Shell](./images/19activate-cloud-shell.jpg)
+
+</details>
 
 20. In the Cloud shell window, click `Open Editor`:
 
+<details>
+<summary>Open Editor</summary>
+
 ![Open editor](./images/20open-editor.jpg)
+
+</details>
 
 21. This will take some time and open up the Google Cloud Shell Editor which looks very similar to VS Code. In the Editor click `Hamburger Menu > Terminal > New Terminal` as follow:
 
+<details>
+<summary>Open Terminal</summary>
+
 ![Open terminal in editor](./images/21open-terminal.jpg)
+
+</details>
 
 22. In the editor's teminal, execute `mkdir projects && cd projects && mkdir gemini-workshop && cd gemini-workshop`, after that run `npm init -y` as follow:
 
+<details>
+<summary>Run commands</summary>
+
 ![Commands executed](./images/22run-commands.jpg)
+
+</details>
 
 23. Then, run `npm install @google-cloud/vertexai` to install vertext AI NPM package:
 
+<details>
+<summary>Install Vertext AI from NPM</summary>
+
 ![Install Vertex AI NPM package](./images/23npm-vertex-ai.jpg)
+
+</details>
 
 24. After that you will load the folder in the project, go to `Hamburger Menu > File > Open Folder`:
 
+<details>
+<summary>Load project</summary>
+
 ![Load project to Cloud shell editor](./images/24load-project.jpg)
+
+</details>
 
 25. Then type in `projects/gem` and select the `gemini-workshop` option and click `OK`:
 
+<details>
+<summary>Select folder</summary>
+
 ![Load project to Cloud shell editor](./images/25select-folder.jpg)
+
+</details>
 
 26. It will load the folder on the Cloud Shell editor, after that, to add a new file click the `file+` icon besides `GEMINI-WORKSHOP` and name it `index.js`
 
+<details>
+<summary>New File</summary>
+
 ![Create new index.js](./images/26new-file.jpg)
+
+</details>
 
 27. For the contents of the index.js, click `<>GET CODE` on the Vertex AI Editor screen, then code click `Node.js` and copy the code into a file called `index.js`
 
+<details>
+<summary>Copy Code</summary>
+
 ![Get Node.js code for e-commerce descripiton generator](./images/13copy-node-js-code.jpg)
+
+</details>
 
 28. Paste the code in the `index.js` empty file and save it:
 
+<details>
+<summary>Paste Code</summary>
+
 ![Paste copied code](./images/27paste-code.jpg)
+
+</details>
 
 29. To run the code and test it out, again open the terminal from `Hamburger Menu > Terminal > New Terminal` and type in `node index` then hit enter. It will ask you to `Authorise`:
 
+<details>
+<summary>Authorise</summary>
+
 ![Paste copied code](./images/28authorise.jpg)
+
+</details>
 
 After authorisation the code will run and give an outupt like the below:
 
+<details>
+<summary>Code output</summary>
+
 ![Code output](./images/29code-output.jpg)
+
+</details>
 
 Congrats! You are a Gemini and Vertex AI novice now :). You can close the Cloud Shell Editor.
 
