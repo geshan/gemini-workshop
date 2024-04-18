@@ -34,6 +34,8 @@ To begin, you will need to have the following pre-requisites sorted:
 1. Have a working Google Cloud account (with some credit)
 1. Cloned/downloaded [the](https://github.com/geshan/gemini-workshop) repository on your machine, for the product images.
 
+Please be aware of the [Vertex AI Pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing) as well.
+
 ### Steps to create the e-commerce product description generator
 
 Below are the steps to create a e-commerce product description generator:
